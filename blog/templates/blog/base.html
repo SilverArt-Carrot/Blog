@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load blog_extras %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="{% static 'blog/js/push.js' %}"></script>
+    <script src="{% static 'blog/js/click.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/instantclick.js' %}" data-no-instant=""></script>
+    <script data-no-instant="">
+        InstantClick.init();
+    </script>
+    <title>Carrot's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-site-verification" content="JwzmnANXlpmQlhwaSORuqpEB6P3Sr-tRhw4R_XDRcEc">
+    <meta name="baidu-site-verification" content="ztPAF2oDcw">
+    <meta name="description"
+        content="This is a simple record of learning bits and pieces, so that each step of learning into an unforgettable memory.">
+    <meta name="keywords" content="learning note">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carrot&#39;s Blog">
+    <meta property="og:url" content="{% url 'blog:index' %}">
+    <meta property="og:site_name" content="Carrot&#39;s Blog">
+    <meta property="og:description"
+        content="This is a simple record of learning bits and pieces, so that each step of learning into an unforgettable memory.">
+    <meta property="og:locale" content="en">
+    <meta property="og:image" content="{% static 'blog/img/handsomecat.jpg' %}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SilverArt-Carrot">
+    <meta name="twitter:description"
+        content="This is a simple record of learning , so that each step of learning into an unforgettable memory.">
+    {#I don't know what is it?#}
+    {#    <meta name="twitter:image" content="https://angelni.github.io/AngelNI.github.io/images/og_image.png">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/matery.css' %}">
+    {#    This is logo of title#}
+    <link rel="icon" href="{% static 'blog/img/Carrot.png' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/atom-one-light.css' %}">
+    {% comment %} <link href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/github.min.css" rel="stylesheet"> {% endcomment %}
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="{% static 'blog/css/lightgallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/justifiedGallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/outdatedbrowser.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/back-to-top.css' %}">
+    <script async="" src="{% static 'blog/js/js' %}"></script>
+    <link rel="stylesheet" href="{% static 'blog/css/progressbar.css' %}">
+    <script src="{% static 'blog/js/pace.min.js' %}"></script>
+    <script async="" src="{% static 'blog/js/busuanzi.pure.mini.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    
+</head>
+
+<body class="is-3-column  pace-done">
+    <div id="MathJax_Message" style="display: none;"></div>
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99"
+            style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+
+    <nav class="navbar navbar-main"
+        style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform: translateY(0px);">
+        <div class="container">
+            <div class="navbar-brand is-flex-center">
+                <a class="navbar-item navbar-logo" href="{% url 'blog:index' %}">
+
+                    <img src="{% static 'blog/img/Carrot.png' %}" alt="SilverArt-Carrot" height="28">
+
+                </a>
+            </div>
+            <div class="navbar-menu">
+
+                <div class="navbar-start">
+
+                    <a class="navbar-item is-active" href="{% url 'blog:index' %}">Home</a>
+
+                    <a class="navbar-item" href="#">About</a>
+
+                    <a class="navbar-item" href="#">Archives</a>
+
+                    <a class="navbar-item" href="#">Categories</a>
+
+                    <a class="navbar-item" href="#">Tags</a>
+
+                    <!-- <a class="navbar-item" href="#">Photo</a> -->
+
+                </div>
+
+                <div class="navbar-end">
+                    {% comment %} <a class="navbar-item" target="_blank" title="Download on GitHub"
+                        href="https://github.com/ppoffice/hexo-theme-icarus">
+                        <i class="fab fa-github"></i>
+                    </a> {% endcomment %}
+                    <a class="navbar-item search" title="Search" href="javascript:;">
+                        <svg t="1586262495831" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2337" width="200" height="200"><path d="M909.824 837.12l-209.408-208.896a333.824 333.824 0 1 0-72.192 72.192l208.896 209.408a51.2 51.2 0 1 0 72.704-72.704z m-477.696-174.592a230.4 230.4 0 1 1 230.4-230.4 230.4 230.4 0 0 1-230.4 230.4z" fill="#515151" p-id="2338"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                    {% block post %}
+
+                    {% endblock post %}
+
+                    {% if is_paginated %}
+
+                    {{ page_obj.render }}
+
+                    {% endif %}
+
+                </div>
+                <div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+
+                    <div class="card widget"
+                        style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+                        {% show_info %}
+
+                    </div>
+
+                    {% block ARCHIVES303 %}
+
+                    {% endblock ARCHIVES303 %}
+
+                    <div class="column-right-shadow is-hidden-widescreen ">
+
+                    </div>
+                </div>
+
+                <div
+                    class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+
+
+                    {% block CATEGORIES251 %}
+
+                    {% endblock CATEGORIES251 %}
+
+                    {% block TAGS307 %}
+
+                    {% endblock TAGS307 %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1;">
+        <div class="container">
+            <div class="level">
+                <div class="level-start has-text-centered-mobile">
+                    <a class="footer-logo is-block has-mb-6" href="{% url 'blog:index' %}">
+                        <img src="{% static 'blog/img/Carrot.png' %}" alt="SilverArt-Carrot" height="28">
+                    </a>
+                    <p class="is-size-7">
+                        © 2020 SilverArt-Carrot&nbsp;
+                        基于 <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a
+                            href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus主题</a>
+                        修改
+                        <br>
+
+                    </p>
+                    <span id="sitetime"> 已运行0 年 282 天 4 小时 39 分钟 12 秒</span>
+                </div>
+                <div class="level-end">
+
+                    <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="{% static 'blog/js/echarts.min.js' %}"></script>
+        </div>
+        <script language="javascript">
+            function siteTime() {
+                window.setTimeout("siteTime()", 1000);
+                var seconds = 1000;
+                var minutes = seconds * 60;
+                var hours = minutes * 60;
+                var days = hours * 24;
+                var years = days * 365;
+                var today = new Date();
+                var todayYear = today.getFullYear();
+                var todayMonth = today.getMonth() + 1;
+                var todayDate = today.getDate();
+                var todayHour = today.getHours();
+                var todayMinute = today.getMinutes();
+                var todaySecond = today.getSeconds();
+                var t1 = Date.UTC(2020, 03, 27, 15, 00, 00);
+                var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                var diff = t2 - t1;
+                var diffYears = Math.floor(diff / years);
+                var diffDays = Math.floor((diff / days) - diffYears * 365);
+                var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                    minutes);
+                var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                    diffMinutes * minutes) / seconds);
+                document.getElementById("sitetime").innerHTML = " 已运行" + diffYears + " 年 " + diffDays + " 天 " +
+                    diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+            }
+            siteTime();
+        </script>
+
+    </footer>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <script src="{% static 'blog/js/jquery.min.js(1)' %}"></script>
+    <script src="{% static 'blog/js/moment-with-locales.min.js' %}"></script>
+    <script>
+        moment.locale("en");
+    </script>
+    <script src="{% static 'blog/js/animation.js' %}"></script>
+    <script src="{% static 'blog/js/lightgallery.min.js' %}" defer=""></script>
+    <script src="{% static 'blog/js/jquery.justifiedGallery.min.js' %}" defer=""></script>
+    <script src="{% static 'blog/js/gallery.js' %}" defer=""></script>
+    <div id="outdated">
+        <h6>Your browser is out-of-date!</h6>
+        <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser"
+                href="http://outdatedbrowser.com/">Update
+                my browser now </a></p>
+        <p class="last"><a href="{% url 'blog:index' %}" id="btnCloseUpdateBrowser" title="Close">×</a></p>
+    </div>
+    <script src="{% static 'blog/js/outdatedbrowser.min.js' %}" defer=""></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'flex'
+            });
+        });
+    </script>
+    {#    <script src="{% static 'blog/js/MathJax.js' %}" defer=""></script>#}
+    {#    <script>#}
+    {#        document.addEventListener('DOMContentLoaded', function () {#}
+    {#            MathJax.Hub.Config({#}
+    {#                'HTML-CSS': {#}
+    {#                    matchFontHeight: false#}
+    {#                },#}
+    {#                SVG: {#}
+    {#                    matchFontHeight: false#}
+    {#                },#}
+    {#                CommonHTML: {#}
+    {#                    matchFontHeight: false#}
+    {#                },#}
+    {#                tex2jax: {#}
+    {#                    inlineMath: [#}
+    {#                        ['$', '$'],#}
+    {#                        ['\\(', '\\)']#}
+    {#                    ]#}
+    {#                }#}
+    {#            });#}
+    {#        });#}
+    {#    </script>#}
+    <a id="back-to-top" title="Back to Top" href="javascript:;" class="card has-text-centered rise-up"
+        style="left: 1111.35px; width: 64px; bottom: 20px; border-radius: 4px;">
+        <svg t="1586172539757" class="icon" viewBox="0 0 1824 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="11310" width="200" height="200">
+            <path
+                d="M0 911.607042 911.607042 0l911.607042 911.607042-112.392958 112.392958L911.607042 224.901647 112.392958 1024 0 911.607042z"
+                p-id="11311">
+            </path>
+        </svg>
+    </a>
+    <script src="{% static 'blog/js/back-to-top.js' %}" defer=""></script>
+    <script src="{% static 'blog/js/clipboard.min.js' %}" defer=""></script>
+    <script src="{% static 'blog/js/clipboard.js' %}" defer=""></script>
+    <script src="{% static 'blog/js/main.js' %}" defer=""></script>
+    <script src="{% static 'blog/js/insight.js' %}" defer=""></script>
+    <link rel="stylesheet" href="{% static 'blog/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/insight.css' %}">
+    <script src="{% static 'blog/js/jquery.min.js(2)' %}"></script>
+    <!-- 雪花特效 -->
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 480) {
+            document.write('<script type="text/javascript" src="{% static '
+                blog / js / flower.js ' %}"><\/script>');
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'blog/js/flower.js' %}"></script>
+
+    <script src="{% static 'blog/js/baidupush.js' %}"></script>
+</body>
+
+</html>

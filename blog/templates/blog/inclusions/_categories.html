@@ -1,0 +1,25 @@
+<div class="card widget"
+                        style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+                        <div class="card-content">
+                            <div class="menu">
+                                <h3 class="menu-label">
+                                    Categories
+                                </h3>
+                                <ul class="menu-list">
+                                    {% for category in categories %}
+                                        <li>
+                                        <a class="level is-marginless"
+                                            href="{% url 'blog:category' category.pk %}">
+                                            <span class="level-start">
+                                                <span class="level-item">{{ category.name }}</span>
+                                            </span>
+                                            <span class="level-end">
+                                                <span class="level-item tag">{{ category.post_set.count }}</span>
+                                            </span>
+                                        </a>
+                                        </li>
+                                    {% endfor  %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>

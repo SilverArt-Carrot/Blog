@@ -1,0 +1,40 @@
+<div class="card card-transparent"
+    style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        {% if page_obj.has_previous %}
+        <div class="pagination-previous">
+            <a href="?{{ page_obj.previous_page_number.querystring }}" class="is-flex-grow has-text-black-ter">Previous
+            </a>
+        </div>
+        {% else %}
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="#">Previous</a>
+        </div>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <div class="pagination-next"><a href="?{{ page_obj.next_page_number.querystring }}"
+                class="is-flex-grow has-text-black-ter">
+                Next</a>
+        </div>
+        {% else %}
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="#">Next</a>
+        </div>
+        {% endif %}
+        <ul class="pagination-list is-hidden-mobile">
+
+            {% for page in page_obj.pages %}
+            {% if page %}
+            {% ifequal page page_obj.number %}
+            <li><a href="#" class="pagination-link is-current">{{ page }}</a></li>
+            {% else %}
+            <li><a href="?{{ page.querystring }}" class="pagination-link has-text-black-ter">{{ page }}</a></li>
+            {% endifequal %}
+            {% else %}
+            <li><span class="pagination-ellipsis has-text-black-ter">…</span></li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,103 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/css/iconfont.css' %}">
+<div class="card-content">
+                            <nav class="level">
+                                <div class="level-item has-text-centered" style="flex-shrink: 1">
+                                    <div>
+
+                                        <figure class="image is-128x128 has-mb-6">
+                                            <img class="is-rounded" src="{% static 'blog/img/handsomecat.jpg' %}"
+                                                alt="SilverArt-Carrot">
+                                        </figure>
+
+
+                                        <p class="is-size-4 is-block">
+                                            SilverArt-Carrot
+                                        </p>
+
+                                        <br>
+                                        <p class="is-size-6 is-block">
+                                            应似飞鸿踏雪泥
+                                        </p>
+                                        <br>
+
+                                        <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                                        <svg t="1586413228581" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2290" width="200" height="200"><path d="M627.2 337.7664a382.7712 382.7712 0 0 0-457.1648-87.04 382.7456 382.7456 0 0 0 56.6016 426.5216L493.3376 975.872c0.6144 0.6656 1.28 1.3568 1.9968 1.9968a25.0112 25.0112 0 0 0 10.4192 5.5552l121.4464-135.936a382.6944 382.6944 0 0 0 0-509.7216z" fill="#EE7C3D" p-id="2291"></path><path d="M512 121.7024a300.6976 300.6976 0 0 1 224.384 500.9664L512 873.8048l-224.2816-251.136A300.6976 300.6976 0 0 1 512 121.7024m0-81.92a382.592 382.592 0 0 0-285.2352 637.44L493.3376 975.872c0.6144 0.6656 1.28 1.3568 1.9968 1.9968a25.1136 25.1136 0 0 0 35.3792-1.9968l266.6752-298.624A382.6176 382.6176 0 0 0 512 39.7824z" fill="#333333" p-id="2292"></path><path d="M512.896 310.656a67.6864 67.6864 0 1 1-67.6608 67.6608 67.7632 67.7632 0 0 1 67.6608-67.6608m0-81.92a149.6064 149.6064 0 1 0 149.6064 149.5808 149.5808 149.5808 0 0 0-149.6064-149.5808z" fill="#333333" p-id="2293"></path></svg>
+                                            <span>zhejiang China</span>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </nav>
+                            <nav class="level is-mobile">
+                                <div class="level-item has-text-centered is-marginless">
+                                    <div>
+                                        <p class="heading">
+                                            Posts
+                                        </p>
+                                        <p class="title has-text-weight-normal">
+                                            {{ posts_num }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered is-marginless">
+                                    <div>
+                                        <p class="heading">
+                                            Categories
+                                        </p>
+                                        <p class="title has-text-weight-normal">
+                                            {{ cate_num }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered is-marginless">
+                                    <div>
+                                        <p class="heading">
+                                            Tags
+                                        </p>
+                                        <p class="title has-text-weight-normal">
+                                            {{ tags_num }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="level">
+                                <a class="level-item button is-link is-rounded" href="https://github.com/SilverArt-Carrot/"
+                                    target="_blank">
+                                    Follow</a>
+                            </div>
+
+
+                            <div class="level is-mobile">
+
+                                <a class="level-item button is-white is-marginless" target="_blank" title="Github"
+                                    href="https://github.com/SilverArt-Carrot/">
+                                    <svg t="1586171469624" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5992" width="200" height="200"><path d="M511.957333 21.333333C241.024 21.333333 21.333333 240.981333 21.333333 512c0 216.832 140.544 400.725333 335.573334 465.664 24.490667 4.394667 32.256-10.069333 32.256-23.082667 0-11.690667 0.256-44.245333 0-85.205333-136.448 29.610667-164.736-64.64-164.736-64.64-22.314667-56.704-54.4-71.765333-54.4-71.765333-44.586667-30.464 3.285333-29.824 3.285333-29.824 49.194667 3.413333 75.178667 50.517333 75.178667 50.517333 43.776 75.008 114.816 53.333333 142.762666 40.789333 4.522667-31.658667 17.152-53.376 31.189334-65.536-108.970667-12.458667-223.488-54.485333-223.488-242.602666 0-53.546667 19.114667-97.322667 50.517333-131.669334-5.034667-12.330667-21.930667-62.293333 4.778667-129.834666 0 0 41.258667-13.184 134.912 50.346666a469.802667 469.802667 0 0 1 122.88-16.554666c41.642667 0.213333 83.626667 5.632 122.88 16.554666 93.653333-63.488 134.784-50.346667 134.784-50.346666 26.752 67.541333 9.898667 117.504 4.864 129.834666 31.402667 34.346667 50.474667 78.122667 50.474666 131.669334 0 188.586667-114.730667 230.016-224.042666 242.090666 17.578667 15.232 33.578667 44.672 33.578666 90.453334v135.850666c0 13.141333 7.936 27.605333 32.853334 22.869334C862.250667 912.597333 1002.666667 728.746667 1002.666667 512 1002.666667 240.981333 783.018667 21.333333 511.957333 21.333333z" p-id="5993"></path></svg>
+                                </a>
+
+                                <a class="level-item button is-white is-marginless" target="_blank" title="bilibili"
+                                    href="https://space.bilibili.com/487239030">
+                                <span class="iconfont icon-bilibili"></span>
+                                </a>
+
+                                <a class="level-item button is-white is-marginless" target="_blank" title="Twitter"
+                                    href="https://twitter.com/">
+                                    <svg t="1586171641133" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7557" width="200" height="200"><path d="M817.739 355.231c-3.597 271.289-177.08 457.108-436.05 468.777-106.796 4.89-184.166-29.608-251.499-72.383 78.932 12.598 176.807-18.953 229.153-63.763-77.37-7.526-123.178-46.908-144.612-110.285 22.357 3.865 45.91 2.84 67.15-1.658-69.817-23.371-119.673-66.522-122.249-156.941 19.592 8.92 40.016 17.305 67.15 18.958-52.25-29.72-90.886-138.363-46.635-210.204 77.547 84.998 170.827 154.359 323.995 163.742-38.455-164.386 179.383-253.528 270.553-143.044 38.54-7.456 69.91-22.078 100.086-37.993-12.42 38.175-36.339 64.853-65.496 86.195 32.007-4.321 60.338-12.142 84.541-24.101-15.013 31.186-47.842 59.152-76.087 82.7z" fill="#2C2C2C" p-id="7558"></path></svg>
+                                </a>
+
+                                <a class="level-item button is-white is-marginless" target="_blank" title="Hexo博客"
+                                    href="https://silverart-carrot.github.io/">
+                                    <svg t="1586171782901" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8378" width="200" height="200"><path d="M384 0l0 96c73.472 0 144.704 14.368 211.712 42.72 64.768 27.392 122.944 66.624 172.96 116.608s89.216 108.192 116.64 172.96c28.352 67.008 42.72 138.24 42.72 211.712l96 0c0-353.472-286.528-640-640-640z" p-id="8379"></path><path d="M384 192l0 96c94.016 0 182.432 36.608 248.896 103.104s103.104 154.88 103.104 248.896l96 0c0-247.424-200.576-448-448-448z" p-id="8380"></path><path d="M480 384l-64 64-224 64-192 416 25.376 25.376 232.8-232.8c-1.408-5.28-2.176-10.848-2.176-16.576 0-35.36 28.64-64 64-64s64 28.64 64 64-28.64 64-64 64c-5.728 0-11.296-0.768-16.576-2.176l-232.8 232.8 25.376 25.376 416-192 64-224 64-64-160-160z" p-id="8381"></path></svg>
+                                </a>
+
+
+{#                                <a class="level-item button is-white is-marginless" target="_blank" title="RSS"#}
+{#                                    href="https://angelni.github.io/AngelNI.github.io/atom.xml">#}
+
+                                    <!-- <i class="fas fa-rss"></i> -->
+
+{#                                </a>#}
+
+                            </div>
+
+                        </div>
