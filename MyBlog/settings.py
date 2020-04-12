@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%zjr!z=4q=tq$!p91a!203_lkg4l5=*71k)iw3blb7dats%^9&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '47.100.164.12']
 
 # Application definition
 
@@ -120,11 +120,17 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, '/static/'),
+]
+
 SESSION_COOKIE_AGE = 86400
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-MEDIA_ROOT = os.path.join(BASE_DIR, r'blog\static\blog\img')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/static/blog/img')
 
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 4,  # 分页条当前页前后应该显示的总页数（两边均匀分布，因此要设置为偶数），
